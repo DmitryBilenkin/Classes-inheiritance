@@ -13,12 +13,12 @@ export default class Character {
       if (typeof name === 'string' && name.length >= 2 && name.length <= 10) {
         this.name = name;
       } else {
-        throw new Error(`Имя персонажа '${name}' задано некорректно`);
+        throw new Error('Имя персонажа задано некорректно');
       }
       if (typeArr.includes(type)) {
         this.type = type;
       } else {
-        throw new Error(`Тип персонажа '${type}' не существует`);
+        throw new Error('Такой тип персонажа не существует');
       }
       this.health = health;
       this.level = level;
