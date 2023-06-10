@@ -1,5 +1,5 @@
 export default class Character {
-  constructor(name, type, health = 100, level = 1) {
+  constructor(name, type, attack, defence) {
     try {
       const typeArr = [
         'Bowerman',
@@ -8,6 +8,7 @@ export default class Character {
         'Daemon',
         'Undead',
         'Zombie',
+        'testType',
       ];
 
       if (typeof name === 'string' && name.length >= 2 && name.length <= 10) {
@@ -20,10 +21,13 @@ export default class Character {
       } else {
         throw new Error('Такой тип персонажа не существует');
       }
-      this.health = health;
-      this.level = level;
+      this.health = 100;
+      this.level = 1;
+      this.attack = attack;
+      this.defence = defence;
     } catch (err) {
-      console.error(err);
+      console.error('Ошибка класса Character');
+      throw err;
     }
   }
 
@@ -37,7 +41,8 @@ export default class Character {
         throw new Error('нельзя повысить левел умершего');
       }
     } catch (err) {
-      console.error(err);
+      console.error('Ошибка в методе Character.levelUp()');
+      throw err;
     }
   }
 
@@ -49,7 +54,8 @@ export default class Character {
         throw new Error('нельзя убить умершего');
       }
     } catch (err) {
-      console.error(err);
+      console.error('Ошибка в методе Character.damage()');
+      throw err;
     }
   }
 }

@@ -1,11 +1,11 @@
 import Character from './character';
 
 export class Zombie extends Character {
-  constructor(name, type, health, level, attack = 40, defence = 10) {
-    super(name, type, health, level);
-    this.attack = attack;
-    this.defence = defence;
+  constructor(name, type, health, level, attack, defence) {
+    super(name, type, health, level, attack, defence);
+    this.attack = 40;
+    this.defence = 10;
   }
 }
 
-export const zombie = new Zombie('bow', 'Zombie');
+export const zombie = new Zombie('zomb', 'Zombie');
